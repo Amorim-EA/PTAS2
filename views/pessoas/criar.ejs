@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+    projeto
+    </title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+       a {
+            color: white;
+       } 
+
+        li {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+
+    <nav><a href="/">Usuarios</a></nav><br>
+    
+    <form>
+      <fieldset>
+       <legend>Adicionar Pessoas</legend>
+       <label> 
+         Nome: <input type="text" id="nome" value="nome" placeholder="Digite o nome">
+       </label><br><br>
+       <label> 
+         Sobrenome: <input type="text" id="s_nome" value="sobrenome" placeholder="Digite o sobrenome">
+        </label><br><br>
+        <label> 
+         Idade: <input type="number" id="idade" value="idade" placeholder="Digite a idade">
+        </label>
+      </fieldset>
+    </form>
+
+    <br>
+
+   <% pessoas.forEach((pessoa) => { %>
+    <li>Nome: <%= pessoa.nome %><br>
+        Sobrenome: <%= pessoa.sobrenome %><br>
+        Idade: <%= pessoa.idade %><br>
+    </li><br><br>
+   <% }) %> 
+  
+    </div>
+</body>
+</html>

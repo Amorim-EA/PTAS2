@@ -7,11 +7,29 @@
     <title>
     projeto
     </title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        
+        a {
+            color: white;
+       } 
+
+        li {
+            list-style: none;
+        }
+    </style>
 </head>
 <body>
+
+   <nav><a href="/pessoas/criar">Pessoas</a></nav><br>
+
    <% usuarios.forEach((usuario) => { %>
     <li><%= usuario.nome %></li><br>
-<% }) %> 
+   <% }) %> 
+
     </div>
 </body>
 </html>
