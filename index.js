@@ -23,6 +23,10 @@ app.get('/pessoas/criar', async function(req, res){
   res.render('pessoas/criar', { pessoas });
 })
 
+app.post('/pessoas/criar', async function(req, res){
+  console.log(req.body);
+})
+
 app.listen(3000, function() {
   console.log('App de Exemplo escutando na porta 3000!')
 });
