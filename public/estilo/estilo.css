@@ -1,0 +1,27 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+.link {
+    color: white;
+} 
+
+.container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card{
+ display:inline-block;
+ border: 2px inset white;
+ width: 15%;
+ margin: 20px;
+ padding: 20px;
+}
+
+fieldset {
+    max-width: 30%;
+    margin: auto;
+    align-items: center;
+ }
