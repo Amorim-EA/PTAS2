@@ -18,24 +18,36 @@ app.get('/', async function(req, res){
   res.render('index', { pessoas });
 })
 
-app.get('/pessoas/adicionar', async function(req, res){
+app.get('/pessoas/criar', async function(req, res){
   var pessoas = await pessoa.findAll();
-  res.render('pessoas/adicionar', { pessoas });
+  res.render('pessoas/criar', { pessoas });
 })
 
-app.get('/pessoas/adicionar', async function (req, res) {
-  res.render('pessoas/adicionar');
+//Adicionando
+app.get('/pessoas/criar', async function (req, res) {
+  res.render('pessoas/criar');
 });
 
 app.post('/pessoas/adicionar', async function (req, res) {
   try {
     await Pessoa.create(req.body);
-    res.redirect('/pessoas/adicionar');
+    res.redirect('/pessoas');
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: 'Ocorreu um erro ao criar o usuário.' });
+    res.status(500).json({ message: 'Ocorreu um erro ao criar a pessoa.' });
   }
 });
+
+//Deletando
+app.post('/pessoas/delete', async function(req, res){
+  try {
+      await Pessoa.destroy({ where: { id: req.body.id } });
+      res.redirect('/pessoas')
+  } catch (err) {
+      console.error(err);
+      res.status(500).json({ message: 'Ocorreu um erro ao deletar a pessoa.' });
+  }
+})
 
 app.listen(3000, function() {
   console.log('App de Exemplo escutando na porta 3000!')

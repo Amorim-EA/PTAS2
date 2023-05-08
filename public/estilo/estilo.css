@@ -14,14 +14,54 @@ body {
 
 .card{
  display:inline-block;
- border: 2px inset white;
+ border: 2px inset blue;
  width: 15%;
  margin: 20px;
  padding: 20px;
 }
 
+form {
+	margin: 40px 0;
+}
+
 fieldset {
-    max-width: 30%;
-    margin: auto;
-    align-items: center;
+    width: 30%;
+	margin: 0 auto;
+    border: 3px inset blue;
  }
+
+form label {
+	display:block;
+	font-size: 20px;
+	margin: 0 0 10px;
+}
+
+.input-padrao {
+    display: block;
+    margin: 0 0 20px;
+    padding: 10px 25px;
+    width: 90%;
+    background-color: black;
+    border: 3px outset blue;
+    color: white;
+}
+
+.botoes {
+ display: flex;
+ justify-content: space-between;
+}
+
+.botoes a {
+ text-decoration: none;
+ border: 3px outset blue;
+ font-size: 21px;
+ width: 49%;
+ text-align: center;
+}
+.botao {
+ border: 3px outset blue;
+ font-size: 21px;
+ background-color: black;
+ color: white;
+ width: 49%;
+}
