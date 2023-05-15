@@ -45,7 +45,7 @@ form label {
     margin: 0 0 20px;
     padding: 10px 25px;
     width: 90%;
-    background-color: black;
+    background-color: transparent;
     border: 3px outset blue;
     color: white;
 }
@@ -62,10 +62,18 @@ form label {
  width: 49%;
  text-align: center;
 }
+
 .botao {
  border: 3px outset blue;
  font-size: 21px;
  background-color: black;
  color: white;
  width: 49%;
+}
+
+.pessoas {
+    color: white;
+    text-shadow: 2px 2px 4px white;
+    text-align: center;
+    font-size: 3em;
 }
