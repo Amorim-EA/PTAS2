@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true}))
 ;
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', async function(req, res){
+app.get('/pessoas', async function(req, res){
   var pessoas = await pessoa.findAll();
   res.render('index', { pessoas });
 })
@@ -26,7 +26,7 @@ app.get('/pessoas/criar', async function(req, res){
 //Adicionando
 app.post('/pessoas/adicionar', async function(req, res){
   try {
-      await Pessoa.create(req.body);
+      await pessoa.create(req.body);
       res.redirect('/pessoas')
   } catch (err) {
       console.error(err);
@@ -37,7 +37,7 @@ app.post('/pessoas/adicionar', async function(req, res){
 //Deletando
 app.get('/pessoas/deletar', async function(req, res){
   try {
-      await Pessoa.destroy({ where: { id: req.query.id } });
+      await pessoa.destroy({ where: { id: req.query.id } });
       res.redirect('/pessoas')
   } catch (err) {
       console.error(err);
