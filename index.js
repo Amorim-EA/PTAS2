@@ -13,21 +13,21 @@ app.use(express.urlencoded({ extended: true}))
 ;
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/pessoas', async function(req, res){
+app.get('/', async function(req, res){
   var pessoas = await pessoa.findAll();
   res.render('index', { pessoas });
 })
 
-app.get('/pessoas/criar', async function(req, res){
+app.get('/pessoas/cadastrar', async function(req, res){
   var pessoas = await pessoa.findAll();
-  res.render('pessoas/criar', { pessoas });
+  res.render('pessoas/cadastrar', { pessoas });
 })
 
 //Adicionando
 app.post('/pessoas/adicionar', async function(req, res){
   try {
       await pessoa.create(req.body);
-      res.redirect('/pessoas')
+      res.redirect('/')
   } catch (err) {
       console.error(err);
       res.status(500).json({ message: 'Ocorreu um erro ao criar o usuário.' });
@@ -38,7 +38,7 @@ app.post('/pessoas/adicionar', async function(req, res){
 app.get('/pessoas/deletar', async function(req, res){
   try {
       await pessoa.destroy({ where: { id: req.query.id } });
-      res.redirect('/pessoas')
+      res.redirect('/')
   } catch (err) {
       console.error(err);
       res.status(500).json({ message: 'Ocorreu um erro ao deletar a pessoa.' });

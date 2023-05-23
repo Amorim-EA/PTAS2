@@ -11,7 +11,7 @@
 </head>
 <body>
 <h1 class="pessoas">Pessoas</h1>
-<nav><a class="link" href="/pessoas/criar">Pessoas</a></nav>
+<nav><a class="link" href="/pessoas/cadastrar">Cadastrar</a></nav>
 <div class="container">
    <% pessoas.forEach((pessoa) => { %>
   <div class="card">
@@ -19,7 +19,7 @@
     <h4>Nome: <%= pessoa.nome %></h4>
     <h4>Sobrenome: <%= pessoa.sobrenome %></h4>
     <h4>Idade: <%= pessoa.idade %></h4>
-    <a href=/pessoas/deletar?id=<%= pessoa.id %> class="bota">Excluir</a>
+    <a href=/pessoas/deletar?id=<%= pessoa.id %>>Excluir</a>
   </div>
    <% }) %> 
 </div>
